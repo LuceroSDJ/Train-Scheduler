@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-//initialize Firebase
+///////initialize Firebase
 var config = {
     apiKey: "AIzaSyBbUMfjZ9PV9Tz51R17yeP5jhko_XcuWBo",
     authDomain: "scheduler-practice.firebaseapp.com",
@@ -14,7 +14,7 @@ firebase.initializeApp(config);
 //Get reference to the database service & assign a database object to a variable 
 var database = firebase.database();
 
-//select submit button and initiate an on 'click' event function
+//////select submit button and initiate an on 'click' event function
 $('button').on('click', function(event) {
     event.preventDefault();
     //select user's input and store them in variables
@@ -47,6 +47,37 @@ $('button').on('click', function(event) {
         $('#firstTrainTime').val(' ');
         $('#frequency').val(' ');
 });
+
+////firebase function event for adding a new train
+database.ref().on('child_added', function (childSnapshot) {
+    console.log(childSnapshot.val());
+    //store childSnapshot into a variable
+    var trainName = childSnapshot.val().name;
+    var destination = childSnapshot.val().station;
+    var fstTrainTime = childSnapshot.val().time;
+    var frequency = childSnapshot.val().frequency; 
+
+    //console log variables
+    console.log(trainName);
+    console.log(destination);
+    console.log(fstTrainTime);
+    console.log(frequency);
+
+    //create new row
+    var newRow = $('<tr>').append(
+        $('<td>').text(trainName),
+        $('<td>').text(destination),
+        $('<td>').text(fstTrainTime),
+        $('<td>').text(frequency),
+    );
+
+    //append new row to table
+    $('tbody').append(newRow);
+
+
+}); //closes funciton event for adding a train
+
+
 
 
 
