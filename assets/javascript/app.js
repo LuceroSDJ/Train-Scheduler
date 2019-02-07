@@ -24,8 +24,6 @@ $('button').on('click', function(event) {
     var fstTrainTime = $('#firstTrainTime').val().trim();
     var frequency = $('#frequency').val().trim();
 
-   
-
     //create local TEMPORARY object for holding train data
     var newTrain = {
         name: trainName,
@@ -105,15 +103,9 @@ database.ref().on('child_added', function (childSnapshot) {
         $('<td>').text(moment(nextTrain).format('hh:mm')),
         $('<td>').text(minutesAway),
     );
- 
     //append new row to table
     $('tbody').append(newRow);
-
-
 }); //closes funciton event for adding a train
-
-//calculate 'next arrival' & 'minutes away'
-//use moment.js (add link)
 
 
 }); //closes $(document).ready(function())
