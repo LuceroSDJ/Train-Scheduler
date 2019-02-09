@@ -1,6 +1,6 @@
 .jumbotron {
     text-align: center;
-    background-color: blue !important;
+    background-color: #1b65b2 !important;
     color: white;
     padding: 25px !important;
 }
@@ -13,10 +13,73 @@
 }
 
 .card-header, .card-footer {
-    background-color: blue !important;
+    background-color: #1b65b2 !important;
     color: white;
+    font-family: 'Hammersmith One', sans-serif;
+    font-size: 24px;
 }
 
 form {
     text-align: left;
+}
+
+.card-body {
+    background-color: #fef5ce;
+    font-family: 'Hammersmith One', sans-serif;
+}
+
+th {
+    color: #1b65b2;
+    font-size: 20px;
+}
+
+/** tablet screen size **/
+@media screen and (max-width: 768px) {
+    .container, .card-body, .card-header, table, .form, tbody {
+    width: 100%;
+    margin: 0 auto;
+    overflow: auto;
+    }
+    th {
+        font-size: 18px;
+        padding: 4px !important;
+        color: #6c47ee;
+    }
+    tbody {
+        font-size: 18px;
+    }
+    td {
+        padding: 0px !important;
+    }
+}
+
+/** phone in landscape screen size **/
+@media screen and (max-width: 640px) {
+    .container, .card-body, .card-header, .table, .form, body {
+    width: 100%;
+    margin: 0 auto;
+    overflow: auto;
+    }
+    th {
+        font-size: 13px;
+        padding: 2px !important;
+    }
+    tbody {
+        font-size: 13px;
+    }
+    td {
+        padding: 0px !important;
+    }
+    .card-body {
+        padding: 0px !important;
+    }
+    .card-header {
+        font-size: 19px;
+    }
+    .jumbotron p {
+        font-size: 18px;
+    }
+    .jumbotron h1 {
+        font-size: 35px;
+    }
 }

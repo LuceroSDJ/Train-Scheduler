@@ -32,6 +32,7 @@
         <p class="lead">This app calculates when the next train will arrive.</p>
         <hr class="my-4">
         <p>User accessing from different devices must be able to view same train times.</p>  
+        <div id='timeCount'></div>
     </div>
     <div class="card text-center">
         <div class="card-header">
@@ -49,15 +50,40 @@
                     <th scope="col">Minutes Away</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                    </tr>
-                </tbody>
+                <tbody id='activeTrain'></tbody>
             </table>
         </div>
         <div class="card-footer text-muted"></div>
     </div>
     <br><br>
+
+    <!-- Test -->
+    <!--
+    <div class="card text-center">
+            <div class="card-header">
+                Trains to be Updated
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                        <th scope="col">Train Name</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">First Train</th>
+                        <th scope="col">Frequency (min)</th>
+                        <th scope="col">Next Arrival</th>
+                        <th scope="col">Minutes Away</th>
+                        </tr>
+                    </thead>
+                    <tbody id='trainForRepair'>
+                        <tr>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="card-footer text-muted"></div>
+        </div>
+    -->
 
     <div class="card text-center">
         <div class="card-header">Add Train</div>
@@ -84,6 +110,8 @@
         </div>
         <div class="card-footer text-muted"></div>
     </div>
+
+    <div class='emptyDiv'></div>
 
 <!-- closes main container -->
 </div> 

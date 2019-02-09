@@ -102,11 +102,21 @@ database.ref().on('child_added', function (childSnapshot) {
         $('<td>').text(frequency),
         $('<td>').text(moment(nextTrain).format('hh:mm')),
         $('<td>').text(minutesAway),
+        //$('<td>').append('<button id="button">Out of Service</button>'),
     );
     //append new row to table
-    $('tbody').append(newRow);
+    $('#activeTrain').append(newRow);
+
 }); //closes funciton event for adding a train
 
+/* test: remove row from table A, clone it, and move it to table B
+//create a function to delete the entire row from html
+$(document).on('click', 'tr', function(event) {
+    var tr = $(this).closest('tr').remove().clone();
+    //tr.find('.emptyDiv');
+    $('#trainForRepair').append(tr);   
+});
+*/
 
 }); //closes $(document).ready(function())
 
